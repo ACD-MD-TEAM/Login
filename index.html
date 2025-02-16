@@ -1,76 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acd Login Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #111;
-            color: white;
-        }
-        .signin {
-            margin-top: 100px;
-        }
-        .inputBox {
-            margin: 10px 0;
-        }
-        input {
-            padding: 10px;
-            width: 200px;
-            display: block;
-            margin: 0 auto;
-        }
-        .links {
-            margin-top: 10px;
-        }
-        .message {
-            margin-top: 20px;
-            font-size: 18px;
-            color: red;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>login page</title>
 </head>
+
 <body>
+    <div class="container" id="cont-remover">
+        <div class="form-content">
+            <h2> LOGIN </h2>
+            <div class="form">
+                <div class="input-box">
+                    <input type="email" placeholder="Email id" title="Email">
+                    <input type="password" placeholder="password" title="password">
+                </div>
+                <div class="check">
+                    <a href="#">Forgot password</a>
 
-<div class="signin">
-    <div class="content">
-        <h2>Sign In</h2>
-        <div class="form">
-            <div class="inputBox">
-                <input type="text" id="username" required placeholder="Username">
+                </div>
+                <div class="button">
+                    <button onclick="openPopup()">Login</button>
+
+                </div>
+                <span class="register">dont have an account? <a href="#">Register</a></span>
+
             </div>
-            <div class="inputBox">
-                <input type="password" id="password" required placeholder="Password">
-            </div>
-            <div class="links">
-                <a href="#">Forgot Password</a>
-                <a href="#">Signup</a>
-            </div>
-            <div class="inputBox">
-                <input type="submit" value="Login" onclick="checkLogin()">
-            </div>
+
         </div>
-        <p class="message" id="message"></p>
-    </div>
-</div>
 
-<script>
-    function checkLogin() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        
-        if (username === "acd" && password === "acd") {
-            document.getElementById("message").innerText = "Login Successful!";
-            document.getElementById("message").style.color = "green";
-        } else {
-            document.getElementById("message").innerText = "Invalid Credentials!";
-            document.getElementById("message").style.color = "red";
-        }
-    }
-</script>
+    </div>
+    <div class="popup-cont" id="poppup">
+        <img src="https://cdn-icons-png.freepik.com/512/5610/5610944.png" width="80px">
+         <h2>Thank you!</h2>
+         <span>your details has been successfully submitted!</span>
+         <button class="btn-1" onclick="closePopup()">ok!</button>
+     </div>
+
+     <script>
+          let popup = document.getElementById("poppup");
+          let remover = document.getElementById("cont-remover");
+
+         function openPopup(){
+            popup.classList.add("open-popup");
+            remover.classList.add("remover");      
+
+         }
+
+         function closePopup(){
+            popup.classList.remove("open-popup");
+            remover.classList.remove("remover"); 
+
+         }
+
+     </script>
 
 </body>
+
 </html>
