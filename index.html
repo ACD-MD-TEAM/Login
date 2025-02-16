@@ -296,4 +296,19 @@
   </section>
   
 </body>
+  <script>
+    function checkLogin() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        
+        if (username === "acd" && password === "acd") {
+            document.getElementById("message").innerText = "Login Successful!";
+            document.getElementById("message").style.color = "green";
+        } else {
+            document.getElementById("message").innerText = "Invalid Credentials!";
+            document.getElementById("message").style.color = "red";
+        }
+    }
+</script>
+
 </html>
